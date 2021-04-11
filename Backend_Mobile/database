@@ -1,0 +1,33 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localMAMP
+ Source Server Type    : MySQL
+ Source Server Version : 50723
+ Source Host           : localhost
+ Source Database       : Practica
+
+ Target Server Type    : MySQL
+ Target Server Version : 50100
+ File Encoding         : utf-8
+
+ Date: 04/11/2021 18:07:12 PM
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+--  Table structure for `TCLIENTES`
+-- ----------------------------
+DROP TABLE IF EXISTS `TCLIENTES`;
+CREATE TABLE `TCLIENTES` (
+	`Id` int(11) NOT NULL AUTO_INCREMENT,
+	`Nombre` varchar(20) NOT NULL,
+	`Apellido` varchar(20) NOT NULL,
+	`Edad` int(3) NOT NULL,
+	`Correo` varchar(50) NOT NULL,
+	PRIMARY KEY (`Id`)
+) ENGINE=`InnoDB` AUTO_INCREMENT=1 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ROW_FORMAT=DYNAMIC CHECKSUM=0 DELAY_KEY_WRITE=0;
+
+SET FOREIGN_KEY_CHECKS = 1;
