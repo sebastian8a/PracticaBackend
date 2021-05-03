@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONObject;
 
@@ -22,6 +25,7 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
 
     String URL_SERVER = "https://practicaup2021.000webhostapp.com/Backend_Mobile/Clientes/insertClient.php";
+    //String URL_SERVER = "https://practica-test-up.000webhostapp.com/Backend_Mobile/Clientes/insertClient.php";
     EditText txtName, txtLastName, txtAge, txtEmail;
     ProgressDialog loading;
 
@@ -37,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnSave = (Button)findViewById(R.id.btnSave);
 
+        FloatingActionButton btnList = (FloatingActionButton)findViewById(R.id.btnList);
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, ConsultaActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void openLoading(String msj){
@@ -148,8 +161,6 @@ public class MainActivity extends AppCompatActivity {
             try{
 
                 JSONObject obj = new JSONObject(result);
-
-
 
                 if(obj.getInt("estado") == 1){
                     openAlert("Excelente", "Se guardo exitosamente!!!");
