@@ -1,0 +1,13 @@
+- DataAlumno.java 
+Es una clase para guardar los datos del alumno
+
+- AdapterAlumno.java 
+Es el adaptador que se usara para visualizar en el RecyclerView
+Es el conector de la informacion con la vista (RecyclerView) y mostrara (en mi caso), solo el nombre y la imagen que tengo en mi servidor ya guardado.
+
+- container_alumno.xml
+Es el contenedor de como sera la vista de solo un alumno.
+
+- activity_main_xml
+Ahi solo pondran el componente RecyclerView, es donde se vera toda la informacion.
+
